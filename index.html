@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Nature Gallery Slideshow</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.6" type="text/css" media="screen" />
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+	<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<div id="users">
+	<input class="search" type="search" name="gallerySearch" id="gal-search" value="" placeholder="Search">
+	
+	<ul class="list">
+		<li data-id="1">
+			<a class="fancybox link" caption="Hay Fields" rel="group" href="photo_gallery_v3/photos/01.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/01.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="2">
+			<a class="fancybox link" caption="Lake View" rel="group" href="photo_gallery_v3/photos/02.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/02.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="3">
+			<a class="fancybox link" caption="Grassy Plateau" rel="group" href="photo_gallery_v3/photos/03.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/03.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="4">
+			<a class="fancybox link" caption="Glacier Caps" rel="group" href="photo_gallery_v3/photos/04.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/04.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="5">
+			<a class="fancybox link" caption="Arizonan Cliffs" rel="group" href="photo_gallery_v3/photos/05.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/05.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="6">
+			<a class="fancybox link" caption="Juniperus Garden" rel="group" href="photo_gallery_v3/photos/06.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/06.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="7">
+			<a class="fancybox link" caption="Swampy Moss Plains" rel="group" href="photo_gallery_v3/photos/07.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/07.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="8">
+			<a class="fancybox link" caption="Domestic Sand Dunes" rel="group" href="photo_gallery_v3/photos/08.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/08.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="9">
+			<a class="fancybox link" caption="Organic Tunnel" rel="group" href="photo_gallery_v3/photos/09.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/09.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="10">
+			<a class="fancybox link" caption="Northwestern White Waves" rel="group" href="photo_gallery_v3/photos/10.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/10.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="11">
+			<a class="fancybox link" caption="Nature's Observatory" rel="group" href="photo_gallery_v3/photos/11.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/11.jpg" alt=""></a>
+		</li>
+		
+		<li data-id="12">
+			<a class="fancybox link" caption="Bluebonnet Party" rel="group" href="photo_gallery_v3/photos/12.jpg">
+			<img class="image" src="photo_gallery_v3/photos/thumbnails/12.jpg" alt=""></a>
+		</li>	
+	</ul>
+</div>	
+	
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.6"></script>
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<script src="http://listjs.com/assets/javascripts/list.min.js"></script>
+
+<script>
+	$(".fancybox").attr('rel', 'gallery')
+	.fancybox({
+        beforeLoad: function() {
+            this.title = $(this.element).attr('caption');
+        }
+		
+	});
+
+	var options = {
+	  valueNames: [
+		{ data: ['id'] },
+		{ attr: 'src', name: 'image' },
+		{ attr: 'caption', name: 'link' }
+	  ]
+};
+var userList = new List('users', options);
+
+</script>
+		
+</body>
+
+</html>
